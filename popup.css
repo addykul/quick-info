@@ -54,6 +54,7 @@ kbd { padding: 1px 5px; border: 1px solid #e8ebe4; border-radius: 4px; color: #a
 .icon-button { width: 28px; height: 30px; display: grid; place-items: center; border: 0; border-radius: 8px; color: #a3a89e; background: transparent; font-size: 16px; }
 .icon-button:hover { color: #3d5547; background: #f3f6f2; }
 .empty-state { min-height: 275px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px 24px; text-align: center; }
+.empty-state[hidden] { display: none; }
 .empty-icon { width: 42px; height: 42px; display: grid; place-items: center; margin-bottom: 10px; border-radius: 14px; color: var(--green); background: var(--green-soft); font-size: 19px; }
 .empty-state h2 { margin: 0; font-family: Manrope, sans-serif; font-size: 14px; letter-spacing: -.02em; }
 .empty-state p { max-width: 255px; margin: 7px 0 15px; color: var(--muted); font-size: 11px; line-height: 1.55; }
