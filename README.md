@@ -34,4 +34,5 @@ QuickInfo stores the information you enter using Chrome’s local extension stor
 
 - `manifest.json` — Chrome Extension Manifest V3 configuration.
 - `popup.html`, `popup.css`, `popup.js` — extension popup interface and behavior.
+- `icons/` — extension icons in Chrome’s supported sizes, with an SVG source.
 
