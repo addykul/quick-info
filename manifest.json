@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "QuickInfo — Job Details",
+  "version": "1.0.0",
+  "description": "Keep your job application details handy and copy them in one click.",
+  "permissions": ["storage", "clipboardWrite"],
+  "action": {
+    "default_title": "QuickInfo",
+    "default_popup": "popup.html"
+  }
+}

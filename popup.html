@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QuickInfo</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 7.5h8M8 12h8M8 16.5h4M6.5 3.75h8.88L19.5 7.9v12.35H6.5a2 2 0 0 1-2-2v-12.5a2 2 0 0 1 2-2Z"/><path d="M15.25 3.9v4.25h4.1"/></svg>
+        </div>
+        <div class="brand-copy">
+          <h1>QuickInfo</h1>
+          <p>Your details, ready to paste.</p>
+        </div>
+        <span class="count-pill" id="count-pill" aria-label="Saved details">0</span>
+      </header>
+
+      <section class="toolbar" aria-label="Search and add details">
+        <label class="searchbox">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.3 4.3"/></svg>
+          <input id="search" type="search" placeholder="Find a detail..." autocomplete="off" aria-label="Find a detail">
+          <kbd>/</kbd>
+        </label>
+        <button class="add-button" id="add-button" type="button" aria-label="Add a detail" title="Add a detail">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+      </section>
+
+      <section class="list-section" aria-label="Saved job application details">
+        <div class="section-heading"><span>YOUR DETAILS</span><span id="result-label"></span></div>
+        <div class="details-list" id="details-list" role="list"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <div class="empty-icon" aria-hidden="true">✦</div>
+          <h2 id="empty-title">Nothing here yet</h2>
+          <p id="empty-copy">Add the details you use most in job applications. They stay saved on this device.</p>
+          <button id="empty-add" type="button">Add your first detail <span aria-hidden="true">＋</span></button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span class="privacy-dot" aria-hidden="true"></span>
+        <span>Stored on this device</span>
+        <span class="footer-shortcut">Click copy, then paste</span>
+      </footer>
+    </main>
+
+    <dialog id="detail-dialog" class="detail-dialog">
+      <form id="detail-form" novalidate>
+        <div class="dialog-heading">
+          <div>
+            <span class="eyebrow" id="dialog-eyebrow">NEW DETAIL</span>
+            <h2 id="dialog-title">Add a detail</h2>
+          </div>
+          <button class="icon-button close-button" type="button" id="close-dialog" aria-label="Close">×</button>
+        </div>
+        <label class="field-label" for="key-input">Label</label>
+        <input class="text-input" id="key-input" maxlength="80" placeholder="e.g. LinkedIn URL" required autocomplete="off">
+        <p class="field-hint">Give this detail a name you’ll recognize.</p>
+        <label class="field-label value-label" for="value-input">Your answer</label>
+        <textarea class="text-input value-input" id="value-input" rows="4" placeholder="Add your answer here"></textarea>
+        <p class="error-message" id="form-error" role="alert"></p>
+        <div class="dialog-actions">
+          <button class="delete-button" id="delete-button" type="button" hidden>Delete</button>
+          <span class="action-spacer"></span>
+          <button class="cancel-button" id="cancel-dialog" type="button">Cancel</button>
+          <button class="save-button" type="submit">Save detail</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
